@@ -11,3 +11,4 @@ build/
 htmlcov/
 *.db
 .env
+data/tx_1min_1year.csv
