@@ -438,11 +438,11 @@ def build_report(engine: GeneticAlphaEngine, top: list[Individual], trading_days
 if __name__ == "__main__":
     os.makedirs("data", exist_ok=True)
 
-    # 1. Prepare data (6 months for reasonable speed)
-    csv_path = "data/tx_1min_6month.csv"
+    # 1. Prepare data (2 months for fast iteration)
+    csv_path = "data/tx_1min_2month.csv"
     if not os.path.exists(csv_path):
-        print("正在產生 6 個月 TX 1-min K 線資料...")
-        all_bars, trading_days = generate_data(csv_path, months=6)
+        print("正在產生 2 個月 TX 1-min K 線資料...")
+        all_bars, trading_days = generate_data(csv_path, months=2)
         print(f"已產生 {len(all_bars):,} 根 K 線, {len(trading_days)} 交易日 -> {csv_path}")
     else:
         print(f"使用已存在的資料: {csv_path}")
